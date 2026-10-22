@@ -58,7 +58,9 @@ Vodia PBX 70.6 (registrar for <tenant>.endlesscalls.com)
 
 ### Actual behavior
 
-Step 4 fails. The contact restore and Router lookup do not resolve the binding, so no push is sent. `TODO: say what happens to the call, e.g. 404 / 480 back to the PBX, or the call goes to voicemail.`
+When the app is closed, the phone **never rings**. The call does show up afterwards in the app as a **missed call**, so something about the call reaches the client, but the call is never presented in time to be answered.
+
+`TODO: confirm in the Flexisip logs whether the ContactRouteInserter restore and Router lookup succeed, whether the FCM push is sent, and when the CANCEL from the PBX arrives compared to the app's re-REGISTER.`
 
 ### Steps to reproduce
 
